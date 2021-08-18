@@ -1,0 +1,45 @@
+.demo-table {
+  width: 100%;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.selected {
+  background-color: #6549d6;
+  color: white;
+}
+
+.selected:hover {
+  background-color: #5757ea;
+  color: #fdfcfc;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 150px;
+}
+
+
+
+

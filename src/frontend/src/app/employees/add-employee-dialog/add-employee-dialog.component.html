@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Add Employee</h1>
+<div mat-dialog-content class="dialog-container">
+
+  <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+    <mat-label>Passport number</mat-label>
+    <input matInput placeholder="Passport number" [(ngModel)]="data.passId">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+    <mat-label>First name</mat-label>
+    <input matInput placeholder="First name" [(ngModel)]="data.firstName">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+    <mat-label>Last name</mat-label>
+    <input matInput placeholder="Last name" [(ngModel)]="data.lastName">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+    <mat-label>Date of start your carrier</mat-label>
+    <input matInput placeholder="YYYY-MM-DD" [(ngModel)]="data.dateOfStart" >
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions >
+  <button mat-raised-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>Add</button>
+  <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+</div>

@@ -1,0 +1,51 @@
+<div *ngIf="isLoading">
+  <mat-spinner class="center" mode="indeterminate"></mat-spinner>
+</div>
+
+<div *ngIf="employees$ | async as employees">
+  <div *ngIf="!isLoading">
+
+
+    <table mat-table [dataSource]="employees" class="mat-elevation-z8 demo-table">
+
+      <ng-container matColumnDef="passId">
+        <th mat-header-cell *matHeaderCellDef>PassID</th>
+        <td mat-cell *matCellDef="let element">{{element.passId}}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef>First Name</th>
+        <td mat-cell *matCellDef="let element">{{element.firstName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef>Last Name</th>
+        <td mat-cell *matCellDef="let element">{{element.lastName}}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="experience">
+        <th mat-header-cell *matHeaderCellDef>Experience</th>
+        <td mat-cell *matCellDef="let element">{{element.experience}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        [class.selected]="row.passId === selectedEmployeeId"
+        (click)="onSelected(row.passId)"
+        *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+
+    </table>
+    <section class="center">
+      <div class="button-row">
+        <button mat-raised-button color="primary" (click)="openDialogAdd()">Add</button>
+        <div *ngIf="selectedEmployeeId">
+          <button mat-raised-button color="warn" (click)="openDialogDelete()">Delete</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
