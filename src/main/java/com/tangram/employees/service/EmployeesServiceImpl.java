@@ -93,6 +93,6 @@ public class EmployeesServiceImpl implements EmployeesService {
             return " " + unitName + " ";
         }
 
-        return " " + unitName + pluralSuffix + " ";
+        return unitAmount + " " + unitName + pluralSuffix + " ";
     }
 }
