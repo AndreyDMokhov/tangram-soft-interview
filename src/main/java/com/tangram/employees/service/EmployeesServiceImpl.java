@@ -90,7 +90,7 @@ public class EmployeesServiceImpl implements EmployeesService {
         }
 
         if (unitAmount == 1) {
-            return " " + unitName + " ";
+            return unitAmount + " " + unitName + " ";
         }
 
         return unitAmount + " " + unitName + pluralSuffix + " ";
